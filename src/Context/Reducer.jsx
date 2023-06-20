@@ -15,7 +15,7 @@ switch (action.type) {
           case "FILTER_BY_SEARCH":
             return {
                 ...state, data:state.data.filter((item)=>item.title.toLowerCase().includes(action.payload.toLowerCase())),
-            
+                  
             }
     default:
         return state;

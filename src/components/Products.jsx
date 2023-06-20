@@ -1,8 +1,7 @@
 
 import { CartState } from '../Context/Context'
 import Filter from './Filter'
-// import SingleProduct from './SingleProduct'
-// import SingleProduct from './SingleProduct'
+
 
 const Products = () => {
    const{state:{data ,searchQuery}}= CartState()
@@ -10,13 +9,7 @@ const Products = () => {
    console.log(data)
    console.log(cart)
    console.log(searchQuery)
-//   const search=()=>{
-//     data.map.filter((item)=>{
-//       return item.title.toLowerCase().includes(searchQuery.toLowerCase());
-//     })
-
-//   }
-// search()
+//
   return (
     <>
     <div className="Container flex p-10 gap-4">
@@ -27,11 +20,11 @@ const Products = () => {
         const{id,title,description,image,price}=prod
         return(
           <div key={id} className="card card-compact  bg-base-100  shadow-xl" >
-          <figure><img className='w-96' src={image} alt="Shoes" /></figure>
+          <figure><img className='w-1/3' src={image} alt="Shoes" /></figure>
           <div className="card-body">
           <h2 className="card-title">{title}</h2>
           <p className='gr'>{description}</p>
-          <p className='gr'>{price}</p>
+          <p className='gr font-bold'> ${price}</p>
           <div className="card-actions justify-between">
           <button className="btn btn-primary" onClick={()=>{
             dispatch({
