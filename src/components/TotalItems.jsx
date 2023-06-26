@@ -6,7 +6,7 @@ const TotalItems = () => {
     const[total ,setTotal]=useState();
     useEffect(()=>{
       setTotal(cart.reduce((acc,curr)=>acc+Number(curr.price),0))
-    })
+    },[cart])
   return (
     <>
     <div className="cont flex flex-col gap-2 w-1/4 p-4 bg-teal-500 text-white ">

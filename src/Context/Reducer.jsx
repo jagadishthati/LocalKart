@@ -14,9 +14,14 @@ switch (action.type) {
                 return {...state, cart:state.cart.filter((c)=>c.id !== action.playload.id)};
           case "FILTER_BY_SEARCH":
             return {
-                ...state, data:state.data.filter((item)=>item.title.toLowerCase().includes(action.payload.toLowerCase())),
-                  
+                ...state, searchQuery:action.payload,  
             }
+          case "SORT_BY_PRICE":
+            return{
+                ...state, sort:action.payload
+            }  
+            
+            
     default:
         return state;
 }
